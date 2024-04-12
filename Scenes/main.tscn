@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgw6e2w0lgtk0"]
+[gd_scene load_steps=4 format=3 uid="uid://dgw6e2w0lgtk0"]
 
 [ext_resource type="Texture2D" uid="uid://dt0ue1nexg0sm" path="res://assets/background/rocks_2.png" id="1_3u7fy"]
 [ext_resource type="PackedScene" uid="uid://ds21k5yw1rbfi" path="res://Scenes/Plane.tscn" id="2_yvu6r"]
+[ext_resource type="PackedScene" uid="uid://c3wlp3try6yom" path="res://Scenes/objects.tscn" id="3_swnx1"]
 
 [node name="Main" type="Node2D"]
 
@@ -11,3 +12,9 @@ texture = ExtResource("1_3u7fy")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_yvu6r")]
 position = Vector2(79, 407)
+
+[node name="Ceiling" parent="." instance=ExtResource("3_swnx1")]
+position = Vector2(0, -21)
+
+[node name="Floor" parent="." instance=ExtResource("3_swnx1")]
+position = Vector2(-4, 865)
