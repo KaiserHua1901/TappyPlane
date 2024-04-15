@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vak5d"]
 size = Vector2(70, 615)
 
-[node name="Pipe" type="Area2D"]
+[node name="Pipes" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -0.00243833

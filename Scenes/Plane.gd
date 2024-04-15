@@ -31,12 +31,12 @@ func fly() -> void:
 		velocity.y = FLY
 		animation_player.play("fly")
 		trigger = false
-		print(trigger)
+		
 		
 	elif not trigger:
 		animation_player.queue("down")
 		trigger = true
-		print(trigger)
+		
 		
 
 func Death():
