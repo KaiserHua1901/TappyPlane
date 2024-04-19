@@ -10,6 +10,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ScoreManager.set_score(0)
 	Spawn_Pipes()
 
 
@@ -33,9 +34,7 @@ func stop_pipes():
 	spawn_timer.stop()
 	for pipe in pipes_holder.get_children():
 		pipe.set_process(false)
-		pipe.get_tree().get_first_node_in_group("laser").stop()
-
-	
+		#pipe.get_tree().get_first_node_in_group("laser").stop()
 
 func _on_plane_died():
 	stop_pipes()

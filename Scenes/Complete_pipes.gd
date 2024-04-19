@@ -21,6 +21,7 @@ func _screen_exited():
 func _on_body_entered(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER) == true: 
 		body.Death()
+		
 	
 		
 
@@ -28,4 +29,4 @@ func _on_body_entered(body):
 
 func _on_laser_body_exited(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER) == true: 
-		print("_on_laser_body_exited", body)
+		ScoreManager.increment_score()

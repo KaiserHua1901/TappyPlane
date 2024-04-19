@@ -1,11 +1,11 @@
 extends CharacterBody2D
-const GRAVITY: float = 800.0
+const GRAVITY: float = 1500.0
 const FLY: float = -500.0
 var trigger:bool = false
 
 signal on_plane_died 
 
-@onready var CharacterSprite: AnimatedSprite2D = $Sprite
+@onready var Sprite: AnimatedSprite2D = $Sprite
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
@@ -41,7 +41,7 @@ func fly() -> void:
 		trigger = true
 		
 func Death():
-	CharacterSprite.stop()
+	Sprite.stop()
 	set_physics_process(false)
 	emit_signal("on_plane_died")
 
