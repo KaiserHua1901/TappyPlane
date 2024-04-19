@@ -14,7 +14,7 @@ Pipes_Scene = ExtResource("4_nx2d4")
 position = Vector2(210, 412)
 texture = ExtResource("1_3u7fy")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_yvu6r")]
+[node name="Plane" parent="." instance=ExtResource("2_yvu6r")]
 position = Vector2(79, 407)
 
 [node name="Ceiling" parent="." instance=ExtResource("3_swnx1")]
@@ -35,4 +35,5 @@ position = Vector2(560, 360)
 [node name="SpawnLower" type="Marker2D" parent="."]
 position = Vector2(560, 472)
 
+[connection signal="on_plane_died" from="Plane" to="." method="_on_plane_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

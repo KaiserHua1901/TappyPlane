@@ -20,4 +20,7 @@ position = Vector2(0, 80)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(50, 0)
 
+[connection signal="body_exited" from="Laser" to="." method="_on_laser_body_exited"]
+[connection signal="body_entered" from="Up" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Down" to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_screen_exited"]

@@ -88,7 +88,7 @@ _data = {
 "fly": SubResource("Animation_jqtix")
 }
 
-[node name="Plane" type="CharacterBody2D"]
+[node name="Plane" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_mk2pn")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

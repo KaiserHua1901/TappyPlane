@@ -2,6 +2,9 @@ extends CharacterBody2D
 const GRAVITY: float = 800.0
 const FLY: float = -500.0
 var trigger:bool = false
+
+signal on_plane_died 
+
 @onready var CharacterSprite: AnimatedSprite2D = $Sprite
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
 
@@ -37,11 +40,11 @@ func fly() -> void:
 		animation_player.queue("down")
 		trigger = true
 		
-		
-
 func Death():
 	CharacterSprite.stop()
 	set_physics_process(false)
+	emit_signal("on_plane_died")
+
 
 
 
