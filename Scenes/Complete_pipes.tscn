@@ -11,11 +11,11 @@ script = ExtResource("1_en6vv")
 scale = Vector2(1, 1.5)
 
 [node name="Up" parent="." instance=ExtResource("2_eli3o")]
-position = Vector2(0, -80)
+position = Vector2(0, -75)
 rotation = 3.14159
 
 [node name="Down" parent="." instance=ExtResource("2_eli3o")]
-position = Vector2(0, 80)
+position = Vector2(0, 75)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(50, 0)

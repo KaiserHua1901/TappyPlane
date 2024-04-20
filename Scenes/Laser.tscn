@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyl0lgil4km12"]
+[gd_scene load_steps=7 format=3 uid="uid://cyl0lgil4km12"]
 
+[ext_resource type="Script" path="res://Scenes/Laser.gd" id="1_jwe02"]
 [ext_resource type="Texture2D" uid="uid://b1t4ta55lxn7i" path="res://assets/pipes/laser2.png" id="1_tc4ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5yxj"]
@@ -43,6 +44,7 @@ _data = {
 }
 
 [node name="Laser" type="Area2D"]
+script = ExtResource("1_jwe02")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, 5)

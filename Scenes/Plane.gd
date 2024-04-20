@@ -3,7 +3,7 @@ const GRAVITY: float = 1500.0
 const FLY: float = -500.0
 var trigger:bool = false
 
-signal on_plane_died 
+
 
 @onready var Sprite: AnimatedSprite2D = $Sprite
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
@@ -43,7 +43,7 @@ func fly() -> void:
 func Death():
 	Sprite.stop()
 	set_physics_process(false)
-	emit_signal("on_plane_died")
+	SignalManager.on_plane_died.emit()
 
 
 

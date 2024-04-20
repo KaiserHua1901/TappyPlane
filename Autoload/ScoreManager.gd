@@ -1,7 +1,7 @@
 extends Node
 
-var score: int = 0 
-var high_score: int = 0 
+var score: int = 0
+var high_score: int = 0
 
 func get_score() -> int:
 	return score
@@ -15,7 +15,8 @@ func set_score(value:int) -> void:
 	if score > high_score:
 		high_score = score
 		print("New High Score:", high_score)
+	SignalManager.on_score_updated.emit()
 		
 func increment_score() -> void:
-	set_score(score + 1)
+	set_score(score + 10)
 	

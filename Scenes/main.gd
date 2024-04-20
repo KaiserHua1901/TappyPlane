@@ -1,5 +1,6 @@
 extends Node2D
 @export var Pipes_Scene: PackedScene
+
 @onready var pipes_holder = $PipesHolder
 @onready var spawn_upper = $SpawnUpper
 @onready var spawn_lower = $SpawnLower
@@ -10,6 +11,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalManager.on_plane_died.connect(on_plane_died)
 	ScoreManager.set_score(0)
 	Spawn_Pipes()
 
@@ -31,12 +33,14 @@ func _on_spawn_timer_timeout():
 	Spawn_Pipes()
 
 func stop_pipes():
+	
 	spawn_timer.stop()
 	for pipe in pipes_holder.get_children():
 		pipe.set_process(false)
-		#pipe.get_tree().get_first_node_in_group("laser").stop()
+	#for laser in pipes_holder.
+		#laser.get_tree().get_first_node_in_group("laser").stop()
 
-func _on_plane_died():
+func on_plane_died():
 	stop_pipes()
 
 	

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Autoload/GameManager.gd"
 ScoreManager="*res://Autoload/ScoreManager.gd"
+SignalManager="*res://Autoload/SignalManager.gd"
 
 [display]
 

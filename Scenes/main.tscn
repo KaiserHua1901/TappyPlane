@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgw6e2w0lgtk0"]
+[gd_scene load_steps=7 format=3 uid="uid://dgw6e2w0lgtk0"]
 
 [ext_resource type="Texture2D" uid="uid://dt0ue1nexg0sm" path="res://assets/background/rocks_2.png" id="1_3u7fy"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_n1emh"]
 [ext_resource type="PackedScene" uid="uid://ds21k5yw1rbfi" path="res://Scenes/Plane.tscn" id="2_yvu6r"]
+[ext_resource type="PackedScene" uid="uid://b4hkaxqtpp5l0" path="res://Scenes/hud.tscn" id="3_e27tt"]
 [ext_resource type="PackedScene" uid="uid://c3wlp3try6yom" path="res://Scenes/objects.tscn" id="3_swnx1"]
 [ext_resource type="PackedScene" uid="uid://cpkle5ue76s6i" path="res://Scenes/Complete_pipes.tscn" id="4_nx2d4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_n1emh")
 Pipes_Scene = ExtResource("4_nx2d4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_e27tt")]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(210, 412)
@@ -35,5 +40,4 @@ position = Vector2(560, 360)
 [node name="SpawnLower" type="Marker2D" parent="."]
 position = Vector2(560, 472)
 
-[connection signal="on_plane_died" from="Plane" to="." method="_on_plane_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
