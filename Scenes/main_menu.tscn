@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0acbwifwwlbv"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7hdfy"]
+[ext_resource type="Texture2D" uid="uid://dly55ork7t564" path="res://assets/background/sky.png" id="1_hbd0v"]
+[ext_resource type="LabelSettings" uid="uid://dcnjwmd6camt7" path="res://assets/12ABfont_80px_shadow.tres" id="1_yn5av"]
+[ext_resource type="LabelSettings" uid="uid://itiu3tx352sg" path="res://assets/12ABfont_60px_shadow_White.tres" id="2_xcui0"]
+[ext_resource type="LabelSettings" uid="uid://c51igwg6r42ve" path="res://assets/12ABfont_32px_shadow.tres" id="3_ogw40"]
+
+[sub_resource type="Animation" id="Animation_utqii"]
+resource_name = "PressSpaceText"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressSpace:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.574349, 1, 1.86607),
+"update": 0,
+"values": [60, 70, 60]
+}
+
+[sub_resource type="Animation" id="Animation_m8kcg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressSpace:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [60]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4pnq"]
+_data = {
+"PressSpaceText": SubResource("Animation_utqii"),
+"RESET": SubResource("Animation_m8kcg")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7hdfy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.839216)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hbd0v")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 32
+
+[node name="TappyPlane" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Tappy 
+Plane"
+label_settings = ExtResource("1_yn5av")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpace" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press 
+Space 
+To 
+Play"
+label_settings = ExtResource("2_xcui0")
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="HSText" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "High Score:"
+label_settings = ExtResource("3_ogw40")
+vertical_alignment = 2
+
+[node name="HSScore" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "00000"
+label_settings = ExtResource("3_ogw40")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_w4pnq")
+}
+autoplay = "PressSpaceText"

@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://itiu3tx352sg"]
+
+[ext_resource type="FontFile" uid="uid://2mmxvgn8xr5h" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_hhp18"]
+
+[resource]
+line_spacing = -8.07
+font = ExtResource("1_hhp18")
+font_size = 60
+font_color = Color(0.947953, 0.948216, 0.975535, 0.933333)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.913725)
+shadow_offset = Vector2(3, 1)

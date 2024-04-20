@@ -11,7 +11,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalManager.on_plane_died.connect(on_plane_died)
+	SignalManager.on_plane_died.connect(stop_pipes)
 	ScoreManager.set_score(0)
 	Spawn_Pipes()
 
@@ -40,7 +40,5 @@ func stop_pipes():
 	#for laser in pipes_holder.
 		#laser.get_tree().get_first_node_in_group("laser").stop()
 
-func on_plane_died():
-	stop_pipes()
 
 	

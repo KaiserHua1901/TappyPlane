@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c51igwg6r42ve"]
+
+[ext_resource type="FontFile" uid="uid://2mmxvgn8xr5h" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_jigsa"]
+
+[resource]
+font = ExtResource("1_jigsa")
+font_size = 32
+font_color = Color(1, 0.655061, 0.465715, 0.933333)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.913725)
+shadow_offset = Vector2(3, 1)

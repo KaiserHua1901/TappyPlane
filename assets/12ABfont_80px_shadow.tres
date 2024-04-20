@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dcnjwmd6camt7"]
+
+[ext_resource type="FontFile" uid="uid://2mmxvgn8xr5h" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_vsbir"]
+
+[resource]
+line_spacing = -10.0
+font = ExtResource("1_vsbir")
+font_size = 80
+font_color = Color(1, 0.655061, 0.465715, 0.933333)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.913725)
+shadow_offset = Vector2(3, 1)
