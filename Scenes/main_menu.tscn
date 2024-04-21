@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0acbwifwwlbv"]
+[gd_scene load_steps=10 format=3 uid="uid://d0acbwifwwlbv"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7hdfy"]
 [ext_resource type="Texture2D" uid="uid://dly55ork7t564" path="res://assets/background/sky.png" id="1_hbd0v"]
 [ext_resource type="LabelSettings" uid="uid://dcnjwmd6camt7" path="res://assets/12ABfont_80px_shadow.tres" id="1_yn5av"]
 [ext_resource type="LabelSettings" uid="uid://itiu3tx352sg" path="res://assets/12ABfont_60px_shadow_White.tres" id="2_xcui0"]
 [ext_resource type="LabelSettings" uid="uid://c51igwg6r42ve" path="res://assets/12ABfont_32px_shadow.tres" id="3_ogw40"]
+[ext_resource type="AudioStream" uid="uid://d3uhdavpp8hvl" path="res://assets/audio/bgm_menu.mp3" id="6_vq2h5"]
 
 [sub_resource type="Animation" id="Animation_utqii"]
 resource_name = "PressSpaceText"
@@ -116,3 +117,8 @@ libraries = {
 "": SubResource("AnimationLibrary_w4pnq")
 }
 autoplay = "PressSpaceText"
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vq2h5")
+volume_db = -15.0
+autoplay = true

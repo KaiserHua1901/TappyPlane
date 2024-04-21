@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgw6e2w0lgtk0"]
+[gd_scene load_steps=8 format=3 uid="uid://dgw6e2w0lgtk0"]
 
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_bjkoo"]
 [ext_resource type="PackedScene" uid="uid://cpkle5ue76s6i" path="res://Scenes/Complete_pipes.tscn" id="2_3kro8"]
 [ext_resource type="PackedScene" uid="uid://b4hkaxqtpp5l0" path="res://Scenes/hud.tscn" id="3_5hm2t"]
 [ext_resource type="Texture2D" uid="uid://dt0ue1nexg0sm" path="res://assets/background/rocks_2.png" id="4_2d2pn"]
+[ext_resource type="PackedScene" uid="uid://bml80ilnsm0h6" path="res://Scenes/game_over.tscn" id="4_dbiij"]
 [ext_resource type="PackedScene" uid="uid://ds21k5yw1rbfi" path="res://Scenes/Plane.tscn" id="5_tln42"]
 [ext_resource type="PackedScene" uid="uid://c3wlp3try6yom" path="res://Scenes/objects.tscn" id="6_ie5nl"]
 
@@ -14,6 +15,8 @@ Pipes_Scene = ExtResource("2_3kro8")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("3_5hm2t")]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("4_dbiij")]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(210, 412)

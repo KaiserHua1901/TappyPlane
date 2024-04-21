@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bml80ilnsm0h6"]
+
+[ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_frnq0"]
+[ext_resource type="LabelSettings" uid="uid://dcnjwmd6camt7" path="res://assets/12ABfont_80px_shadow.tres" id="1_n72fx"]
+[ext_resource type="LabelSettings" uid="uid://kb3vbs13lapd" path="res://assets/12ABfont_48px_shadow.tres" id="2_gjnhs"]
+[ext_resource type="AudioStream" uid="uid://djquojut622tx" path="res://assets/audio/game_over.wav" id="4_blm5c"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_frnq0")
+
+[node name="GOLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = ExtResource("1_n72fx")
+
+[node name="SpaceLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -18.0
+offset_right = 136.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Space 
+to Restart "
+label_settings = ExtResource("2_gjnhs")
+horizontal_alignment = 1
+
+[node name="GameOverTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_blm5c")
+volume_db = -10.0
+
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

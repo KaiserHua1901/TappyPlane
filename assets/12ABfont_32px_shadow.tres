@@ -1,9 +1,10 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c51igwg6r42ve"]
 
-[ext_resource type="FontFile" uid="uid://2mmxvgn8xr5h" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_jigsa"]
+[ext_resource type="FontFile" uid="uid://c4tdjsf76tkkl" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_chun8"]
 
 [resource]
-font = ExtResource("1_jigsa")
+line_spacing = 4.0
+font = ExtResource("1_chun8")
 font_size = 32
 font_color = Color(1, 0.655061, 0.465715, 0.933333)
 shadow_size = 2

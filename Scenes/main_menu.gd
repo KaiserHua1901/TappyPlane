@@ -5,7 +5,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hs_score.text = "%02d" % ScoreManager.get_high_score()
+	hs_score.text = "%05d" % ScoreManager.get_high_score()
+	
+	
 	
 
 

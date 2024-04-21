@@ -7,6 +7,7 @@ var trigger:bool = false
 
 @onready var Sprite: AnimatedSprite2D = $Sprite
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var engine_sound = $EngineSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,6 +42,7 @@ func fly() -> void:
 		trigger = true
 		
 func Death():
+	engine_sound.stop()
 	Sprite.stop()
 	set_physics_process(false)
 	SignalManager.on_plane_died.emit()

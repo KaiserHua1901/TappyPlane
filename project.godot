@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TappyPlane"
-run/main_scene="res://Scenes/GameScene.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,7 @@ SignalManager="*res://Autoload/SignalManager.gd"
 
 window/size/viewport_width=480
 window/size/viewport_height=854
+window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 
 [input]
