@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://buew6mnsg3o7b"]
+
+[ext_resource type="Script" path="res://Scenes/ScrollLayer.gd" id="1_538q2"]
+
+[node name="ScrollLayer" type="ParallaxLayer"]
+motion_mirroring = Vector2(1, 1)
+script = ExtResource("1_538q2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+centered = false

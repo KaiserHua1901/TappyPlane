@@ -1,5 +1,5 @@
 extends Node2D
-const SCROLL:float = 150.0
+
 
 @onready var score_sound = $ScoreSound
 
@@ -7,7 +7,7 @@ const SCROLL:float = 150.0
 
 
 func _process(delta):
-	position.x -= SCROLL * delta
+	position.x -= GameManager.SCROLL * delta
 	# Scroll the object across the scene 
 func _screen_exited():
 	queue_free()

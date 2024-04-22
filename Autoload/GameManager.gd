@@ -1,9 +1,13 @@
 extends Node
 
 const GROUP_PLAYER: String = "player"
+const SCROLL:float = 180.0
+
 
 var game_scene:PackedScene = preload("res://Scenes/GameScene.tscn")
 var main_menu_scene:PackedScene = preload("res://Scenes/main_menu.tscn")
+
+
 
 func load_game_scene() -> void:
 	get_tree().change_scene_to_packed(game_scene)
