@@ -1,31 +1,34 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpkle5ue76s6i"]
 
-[ext_resource type="Script" path="res://Scenes/Complete_pipes.gd" id="1_en6vv"]
-[ext_resource type="PackedScene" uid="uid://cyl0lgil4km12" path="res://Scenes/Laser.tscn" id="1_ikoto"]
-[ext_resource type="PackedScene" uid="uid://bn6hg40f1y0qm" path="res://Scenes/Pipes.tscn" id="2_eli3o"]
-[ext_resource type="AudioStream" uid="uid://dm28d406rho1j" path="res://assets/audio/score.wav" id="4_fkt2x"]
+[ext_resource type="Script" path="res://scripts/Complete_pipes.gd" id="1_djdpp"]
+[ext_resource type="PackedScene" uid="uid://cyl0lgil4km12" path="res://scenes/Laser.tscn" id="2_n21vp"]
+[ext_resource type="PackedScene" uid="uid://bn6hg40f1y0qm" path="res://scenes/Pipes.tscn" id="3_g5ga5"]
+[ext_resource type="AudioStream" uid="uid://dm28d406rho1j" path="res://assets/audio/score.wav" id="4_y0giu"]
 
 [node name="CompletePipes" type="Node2D"]
-script = ExtResource("1_en6vv")
+script = ExtResource("1_djdpp")
 
-[node name="Laser" parent="." instance=ExtResource("1_ikoto")]
+[node name="Laser" parent="." instance=ExtResource("2_n21vp")]
 scale = Vector2(1, 1.5)
+script = null
 
-[node name="Up" parent="." instance=ExtResource("2_eli3o")]
+[node name="Up" parent="." instance=ExtResource("3_g5ga5")]
 position = Vector2(0, -75)
 rotation = 3.14159
+collision_layer = 0
 
-[node name="Down" parent="." instance=ExtResource("2_eli3o")]
+[node name="Down" parent="." instance=ExtResource("3_g5ga5")]
 position = Vector2(0, 75)
+collision_layer = 0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(50, 0)
 
 [node name="ScoreSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_fkt2x")
+stream = ExtResource("4_y0giu")
 volume_db = -15.0
 
-[connection signal="body_exited" from="Laser" to="." method="_on_laser_body_exited"]
+[connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]
 [connection signal="body_entered" from="Up" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Down" to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_screen_exited"]

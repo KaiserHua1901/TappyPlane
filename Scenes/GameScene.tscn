@@ -1,43 +1,41 @@
 [gd_scene load_steps=9 format=3 uid="uid://dgw6e2w0lgtk0"]
 
-[ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_bjkoo"]
-[ext_resource type="PackedScene" uid="uid://cpkle5ue76s6i" path="res://Scenes/Complete_pipes.tscn" id="2_3kro8"]
-[ext_resource type="PackedScene" uid="uid://b4hkaxqtpp5l0" path="res://Scenes/hud.tscn" id="3_5hm2t"]
-[ext_resource type="Texture2D" uid="uid://dt0ue1nexg0sm" path="res://assets/background/rocks_2.png" id="4_2d2pn"]
-[ext_resource type="PackedScene" uid="uid://bml80ilnsm0h6" path="res://Scenes/game_over.tscn" id="4_dbiij"]
-[ext_resource type="PackedScene" uid="uid://ds21k5yw1rbfi" path="res://Scenes/Plane.tscn" id="5_tln42"]
-[ext_resource type="PackedScene" uid="uid://c3wlp3try6yom" path="res://Scenes/objects.tscn" id="6_ie5nl"]
-[ext_resource type="PackedScene" uid="uid://cu2dxs3ovronw" path="res://Scenes/scrolling_bg.tscn" id="8_3r3e0"]
+[ext_resource type="Script" path="res://scripts/GameScene.gd" id="1_xfgau"]
+[ext_resource type="PackedScene" uid="uid://cpkle5ue76s6i" path="res://scenes/Complete_pipes.tscn" id="2_x3or3"]
+[ext_resource type="PackedScene" uid="uid://b4hkaxqtpp5l0" path="res://scenes/hud.tscn" id="3_bwa3e"]
+[ext_resource type="PackedScene" uid="uid://bml80ilnsm0h6" path="res://scenes/game_over.tscn" id="4_f62kn"]
+[ext_resource type="Texture2D" uid="uid://dt0ue1nexg0sm" path="res://assets/background/rocks_2.png" id="5_718wn"]
+[ext_resource type="PackedScene" uid="uid://ds21k5yw1rbfi" path="res://scenes/Plane.tscn" id="6_8q3uv"]
+[ext_resource type="PackedScene" uid="uid://c3wlp3try6yom" path="res://scenes/objects.tscn" id="7_tsrru"]
+[ext_resource type="PackedScene" uid="uid://cu2dxs3ovronw" path="res://scenes/scrolling_bg.tscn" id="8_ao1mi"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_bjkoo")
-Pipes_Scene = ExtResource("2_3kro8")
+script = ExtResource("1_xfgau")
+Pipes_Scene = ExtResource("2_x3or3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_5hm2t")]
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_bwa3e")]
 
-[node name="GameOver" parent="CanvasLayer" instance=ExtResource("4_dbiij")]
-visible = false
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("4_f62kn")]
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(210, 412)
-texture = ExtResource("4_2d2pn")
+texture = ExtResource("5_718wn")
 
-[node name="Plane" parent="." instance=ExtResource("5_tln42")]
+[node name="Plane" parent="." instance=ExtResource("6_8q3uv")]
 position = Vector2(79, 407)
 
-[node name="Ceiling" parent="." instance=ExtResource("6_ie5nl")]
+[node name="Ceiling" parent="." instance=ExtResource("7_tsrru")]
 position = Vector2(0, -21)
 
-[node name="Floor" parent="." instance=ExtResource("6_ie5nl")]
+[node name="Floor" parent="." instance=ExtResource("7_tsrru")]
 position = Vector2(-4, 865)
 
 [node name="PipesHolder" type="Node" parent="."]
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 1.2
 autostart = true
 
 [node name="SpawnUpper" type="Marker2D" parent="."]
@@ -46,6 +44,6 @@ position = Vector2(560, 360)
 [node name="SpawnLower" type="Marker2D" parent="."]
 position = Vector2(560, 472)
 
-[node name="ScrollingBG" parent="." instance=ExtResource("8_3r3e0")]
+[node name="ScrollingBG" parent="." instance=ExtResource("8_ao1mi")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

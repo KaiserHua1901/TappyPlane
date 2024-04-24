@@ -18,5 +18,5 @@ func set_score(value:int) -> void:
 	SignalManager.on_score_updated.emit()
 		
 func increment_score() -> void:
-	set_score(score + 10)
+	set_score(score + 10 + randi_range(1,9))
 	

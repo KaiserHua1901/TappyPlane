@@ -20,7 +20,6 @@ func _physics_process(delta):
 	# Creating a gravity 
 	#if Input.is_action_just_pressed("fly") == false and velocity.y <= 0:
 		#animation_player.queue("idle")
-
 	
 	fly()
 	
